@@ -1,0 +1,259 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "windows.h"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// 非特定语言(默认值) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_NEUD)
+LANGUAGE LANG_NEUTRAL, SUBLANG_DEFAULT
+#pragma code_page(936)
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_DEBUG DIALOGEX 0, 0, 228, 51
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "System States"
+FONT 8, "MS Shell Dlg", 400, 0, 0x0
+BEGIN
+    LTEXT           "debug port:",IDC_STATIC1,7,16,39,8
+    LTEXT           "",IDC_port80,47,16,20,8
+    LTEXT           "SMRAM:",IDC_STATIC,69,16,28,8
+    LTEXT           "Closed,Disabled",IDC_smram,101,16,53,8,NOT WS_GROUP
+    LTEXT           "A20:",IDC_STATIC2,163,16,16,8
+    LTEXT           "ON",IDC_A20,187,16,18,8
+    LTEXT           "CAPS:",IDC_STATIC3,7,32,21,8
+    LTEXT           "NUM:",IDC_STATIC4,69,32,18,8
+    LTEXT           "SCROLL:",IDC_STATIC5,145,32,29,8
+    LTEXT           "OFF",IDC_CAPS,28,32,14,8
+    LTEXT           "OFF",IDC_NUM,94,32,14,8
+    LTEXT           "OFF",IDC_SCROLL,175,32,14,8
+END
+
+IDD_MOUNT_HDD DIALOGEX 0, 0, 233, 116
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Mount/unmount HDD"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,176,6,50,14
+    CONTROL         "&Primary master",IDC_PriMaster,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,17,17,69,10
+    CONTROL         "Primary &slave",IDC_PriSlave,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,17,30,69,10
+    EDITTEXT        IDC_EDIT1,17,79,135,14,ES_AUTOHSCROLL
+    LTEXT           "&image:",IDC_STATIC,16,68,22,8
+    LTEXT           "Drive:",IDC_STATIC,17,6,20,8
+    PUSHBUTTON      "...",IDC_BROWSER,153,78,18,16
+    PUSHBUTTON      "&mount",IDC_MOUNT,176,79,50,14
+    PUSHBUTTON      "&Unmount",IDC_UNMOUNT,176,95,50,14
+    CONTROL         "Secondary m&aster",IDC_SecMaster,"Button",BS_AUTORADIOBUTTON,17,42,69,10
+    CONTROL         "Secondary s&lave",IDC_SecSlave,"Button",BS_AUTORADIOBUTTON,17,55,69,10
+END
+
+IDD_MOUNT_FLOPPY DIALOGEX 0, 0, 233, 66
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Mount/unmount Floppy"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,176,6,50,14
+    CONTROL         "&A:",IDC_FLOPPYA,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,44,6,23,10
+    CONTROL         "&B:",IDC_FLOPPYB,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,79,6,23,10
+    EDITTEXT        IDC_EDIT1,17,30,135,14,ES_AUTOHSCROLL
+    LTEXT           "&image:",IDC_STATIC,16,19,22,8
+    LTEXT           "Drive:",IDC_STATIC,17,6,20,8
+    PUSHBUTTON      "...",IDC_BROWSER,153,28,18,16
+    CONTROL         "&Write protected",IDC_WRITE_PROTECTED,"Button",BS_AUTOCHECKBOX | BS_LEFTTEXT | WS_TABSTOP,15,44,67,10
+    PUSHBUTTON      "&mount",IDC_MOUNT,176,30,50,14
+    PUSHBUTTON      "&Unmount",IDC_UNMOUNT,176,45,50,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_DEBUG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 221
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 44
+    END
+
+    IDD_MOUNT_HDD, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 226
+        TOPMARGIN, 6
+        BOTTOMMARGIN, 109
+    END
+
+    IDD_MOUNT_FLOPPY, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 226
+        TOPMARGIN, 6
+        BOTTOMMARGIN, 59
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // 非特定语言(默认值) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// 中文(简体，中国) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG 22, 17, 230, 75
+STYLE DS_SETFONT | DS_MODALFRAME | WS_CAPTION | WS_SYSMENU
+CAPTION "About"
+FONT 8, "System"
+BEGIN
+    ICON            IDI_VT,IDC_MYICON,14,9,16,16
+    LTEXT           "vt Version 1.0",IDC_STATIC,49,10,119,8,SS_NOPREFIX
+    LTEXT           "Copyright (C) 2009",IDC_STATIC,49,20,119,8
+    DEFPUSHBUTTON   "OK",IDOK,195,6,30,11,WS_GROUP
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_VT                  ICON                    "vt.ico"
+
+IDI_SMALL               ICON                    "small.ico"
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDC_VT MENUEX
+BEGIN
+    POPUP "&File",                          65535,MFT_STRING,MFS_ENABLED
+    BEGIN
+        MENUITEM "&Load",                       ID_FILE_LOAD,MFT_STRING,MFS_ENABLED
+        MENUITEM "&Save",                       ID_FILE_SAVE,MFT_STRING,MFS_ENABLED
+        MENUITEM "E&xit",                       IDM_EXIT,MFT_STRING,MFS_ENABLED
+    END
+    POPUP "&System",                        65535,MFT_STRING,MFS_ENABLED
+    BEGIN
+        MENUITEM "&Reset",                      ID_SYSTEM_RESET,MFT_STRING,MFS_ENABLED
+        MENUITEM "&Power off",                  32773,MFT_STRING,MFS_ENABLED
+        MENUITEM "Alt+Del+trl",                 32774,MFT_STRING,MFS_ENABLED
+    END
+    POPUP "hack",                           65535,MFT_STRING,MFS_ENABLED
+    BEGIN
+        MENUITEM "Invert &Trace",               ID_HACK_INVERTTRACE,MFT_STRING,MFS_ENABLED
+        MENUITEM "Invert &Step",                ID_HACK_INVERTSTEP,MFT_STRING,MFS_ENABLED
+    END
+    POPUP "&Device",                        65535,MFT_STRING,MFS_ENABLED
+    BEGIN
+        MENUITEM "&Floppy",                     ID_FLOPPY,MFT_STRING,MFS_ENABLED
+        MENUITEM "&HDD",                        ID_HDD,MFT_STRING,MFS_ENABLED
+    END
+    POPUP "&Help ",                         65535,MFT_STRING | MFT_RIGHTJUSTIFY,MFS_ENABLED
+    BEGIN
+        MENUITEM "&About ...",                  IDM_ABOUT,MFT_STRING,MFS_ENABLED
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDC_VT ACCELERATORS
+BEGIN
+    "?",            IDM_ABOUT,              ASCII,  ALT
+    "/",            IDM_ABOUT,              ASCII,  ALT
+END
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#define APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""windows.h""\r\n"
+    "#undef APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE
+BEGIN
+    IDS_APP_TITLE           "VGA emulator"
+    IDC_VT                  "VT"
+END
+
+#endif    // 中文(简体，中国) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

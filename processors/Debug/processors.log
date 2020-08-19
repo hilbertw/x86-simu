@@ -1,0 +1,12 @@
+﻿cl : 命令行 warning D9035: “Gm”选项已否决，并将在将来的版本中移除
+  cpus.cpp
+e:\projects\x86 simulator\processors\cpus.cpp(17): error C2065: “apic_bus”: 未声明的标识符
+e:\projects\x86 simulator\processors\cpus.cpp(23): error C2065: “cpu_no”: 未声明的标识符
+e:\projects\x86 simulator\processors\cpus.cpp(25): error C2065: “cpu_no”: 未声明的标识符
+e:\projects\x86 simulator\processors\cpus.cpp(27): error C2065: “cpu_no”: 未声明的标识符
+e:\projects\x86 simulator\processors\cpus.cpp(27): error C3861: “log0”: 找不到标识符
+e:\projects\x86 simulator\processors\cpus.cpp(28): error C2065: “cpu_no”: 未声明的标识符
+e:\projects\x86 simulator\processors\cpus.cpp(29): error C2065: “cpu_no”: 未声明的标识符
+e:\projects\x86 simulator\processors\cpus.cpp(30): error C2065: “cpu_no”: 未声明的标识符
+e:\projects\x86 simulator\processors\cpus.cpp(31): error C2065: “cpu_no”: 未声明的标识符
+e:\projects\x86 simulator\processors\cpus.cpp(29): error C3861: “display_disasm”: 找不到标识符

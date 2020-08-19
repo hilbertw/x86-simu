@@ -1,0 +1,15 @@
+d:\projects\x86 simulator\common\x64\debug\instruction-desc.obj
+d:\projects\x86 simulator\common\x64\debug\fetch-file.obj
+d:\projects\x86 simulator\common\x64\debug\fetch-base.obj
+d:\projects\x86 simulator\common\x64\debug\exec-info.obj
+d:\projects\x86 simulator\common\x64\debug\display_rm.obj
+d:\projects\x86 simulator\common\x64\debug\disasm.obj
+d:\projects\x86 simulator\common\x64\debug\decode_rm.obj
+d:\projects\x86 simulator\common\x64\debug\vc120.pdb
+d:\projects\binary translator\x64\debug\common.lib
+d:\projects\x86 simulator\common\x64\debug\common.tlog\cl.command.1.tlog
+d:\projects\x86 simulator\common\x64\debug\common.tlog\cl.read.1.tlog
+d:\projects\x86 simulator\common\x64\debug\common.tlog\cl.write.1.tlog
+d:\projects\x86 simulator\common\x64\debug\common.tlog\lib-link.read.1.tlog
+d:\projects\x86 simulator\common\x64\debug\common.tlog\lib-link.write.1.tlog
+d:\projects\x86 simulator\common\x64\debug\common.tlog\lib.command.1.tlog

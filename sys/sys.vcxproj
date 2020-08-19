@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{76A90F3A-21FE-4BCD-A8F3-8E1454CFE40E}</ProjectGuid>
+    <RootNamespace>biu</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v120_xp</PlatformToolset>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v120_xp</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>12.0.30501.0</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)$(Configuration)\\$(ProjectName)</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)$(Configuration)\\$(ProjectName)</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>include;;$(SolutionDir)\jsoncpp\include;$(SolutionDir)\runtime-lib;$(SolutionDir)\acpi;.;$(SolutionDir)\include;$(SolutionDir)\cpu-simu\include;$(SolutionDir)\apic;$(SolutionDir)\common\include;$(SolutionDir)\vt;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <AdditionalOptions>/FS %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Lib>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Lib>
+    <Lib>
+      <SubSystem>Console</SubSystem>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <AdditionalIncludeDirectories>include;..\..\runtime-lib;..\acpi;.;..\include;..\cpu-simu\include;..\apic;..\common\include;..\vt;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <AdditionalOptions>/FS %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Lib>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Lib>
+    <Lib>
+      <SubSystem>Console</SubSystem>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="8042.cpp" />
+    <ClCompile Include="8237.cpp" />
+    <ClCompile Include="8253.cpp" />
+    <ClCompile Include="8259.cpp" />
+    <ClCompile Include="82801-bridge.cpp" />
+    <ClCompile Include="82801-ehci.cpp" />
+    <ClCompile Include="82801-ide.cpp" />
+    <ClCompile Include="82801-lpc.cpp" />
+    <ClCompile Include="82801-smbus.cpp" />
+    <ClCompile Include="82801-uhci.cpp" />
+    <ClCompile Include="82845-bridge.cpp" />
+    <ClCompile Include="82845-devs.cpp" />
+    <ClCompile Include="82845-host.cpp" />
+    <ClCompile Include="a20.cpp" />
+    <ClCompile Include="acpi82801.cpp" />
+    <ClCompile Include="addressmap.cpp" />
+    <ClCompile Include="apic.cpp" />
+    <ClCompile Include="apm.cpp" />
+    <ClCompile Include="atapi.cpp" />
+    <ClCompile Include="clock.cpp" />
+    <ClCompile Include="cmos.cpp" />
+    <ClCompile Include="config.cpp" />
+    <ClCompile Include="cpu-if.cpp" />
+    <ClCompile Include="dump-acpi.cpp" />
+    <ClCompile Include="dump-apic.cpp" />
+    <ClCompile Include="dump-mp.cpp" />
+    <ClCompile Include="dump-pci.cpp" />
+    <ClCompile Include="ErrMsg.cpp" />
+    <ClCompile Include="floppy.cpp" />
+    <ClCompile Include="fsb.cpp" />
+    <ClCompile Include="history.cpp" />
+    <ClCompile Include="ich.cpp" />
+    <ClCompile Include="ide-cmd.cpp" />
+    <ClCompile Include="ide-io.cpp" />
+    <ClCompile Include="irq-wire.cpp" />
+    <ClCompile Include="isa-pnp.cpp" />
+    <ClCompile Include="linux-debug.cpp" />
+    <ClCompile Include="log.cpp" />
+    <ClCompile Include="mch.cpp" />
+    <ClCompile Include="pci-bridge.cpp" />
+    <ClCompile Include="pci-config.cpp" />
+    <ClCompile Include="pci-generic.cpp" />
+    <ClCompile Include="pci.cpp" />
+    <ClCompile Include="ports.cpp" />
+    <ClCompile Include="reset.cpp" />
+    <ClCompile Include="smbus.cpp" />
+    <ClCompile Include="smi82801.cpp" />
+    <ClCompile Include="system.cpp" />
+    <ClCompile Include="usb.cpp" />
+    <ClCompile Include="video.cpp" />
+    <ClCompile Include="W83L517D.cpp" />
+    <ClCompile Include="xp-debug.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\include\usb.h" />
+    <ClInclude Include="8253.h" />
+    <ClInclude Include="8259.h" />
+    <ClInclude Include="include\82801-ehci.h" />
+    <ClInclude Include="include\82801-ide.h" />
+    <ClInclude Include="include\82801-lpc.h" />
+    <ClInclude Include="include\82801-pci-bridge.h" />
+    <ClInclude Include="include\82801-smbus.h" />
+    <ClInclude Include="include\82801-uhci.h" />
+    <ClInclude Include="include\82845-host.h" />
+    <ClInclude Include="include\82845-pci-bridge.h" />
+    <ClInclude Include="include\acpi82801.h" />
+    <ClInclude Include="include\addressmap.h" />
+    <ClInclude Include="include\apic.h" />
+    <ClInclude Include="include\atapi.h" />
+    <ClInclude Include="include\bus.h" />
+    <ClInclude Include="include\config.h" />
+    <ClInclude Include="include\dma.h" />
+    <ClInclude Include="include\fsb.h" />
+    <ClInclude Include="include\history.h" />
+    <ClInclude Include="include\ich.h" />
+    <ClInclude Include="include\ide.h" />
+    <ClInclude Include="include\irq-wire.h" />
+    <ClInclude Include="include\iso9660.h" />
+    <ClInclude Include="include\log.h" />
+    <ClInclude Include="include\mch.h" />
+    <ClInclude Include="include\pci-devs.h" />
+    <ClInclude Include="include\pci.h" />
+    <ClInclude Include="include\smbus.h" />
+    <ClInclude Include="include\smi82801.h" />
+    <ClInclude Include="include\sys.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

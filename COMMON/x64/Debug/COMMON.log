@@ -1,0 +1,9 @@
+﻿Build started 2016/10/2 17:04:55.
+     1>Project "D:\Projects\x86 simulator\COMMON\COMMON.vcxproj" on node 2 (Build target(s)).
+     1>Lib:
+         COMMON.vcxproj -> D:\Projects\binary translator\x64\Debug\COMMON.lib
+     1>Done Building Project "D:\Projects\x86 simulator\COMMON\COMMON.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.05

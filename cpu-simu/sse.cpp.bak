@@ -1,0 +1,761 @@
+#include <stdio.h>
+#include "cpu.h"
+
+void CCPU::addpd_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::addps_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::addsd_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::addss_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::addsubpd_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::addsubps_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::andnpd_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::andnps_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::andpd_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::andps_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::blendpd_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::blendps_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::blendvpd_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::blendvps_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::cmppd_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::cmpps_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::comisd_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::comiss_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::cvtdq2ps_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::cvtpd2dq_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::cvtpd2pi_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::cvtpd2ps_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::cvtpi2pd_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::cvtpi2ps_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::cvtps2dq_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::cvtps2pd_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::cvtps2pi_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::cvtsd2si_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::cvtsd2ss_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::cvtsi2sd_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::cvtsi2ss_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::cvtss2sd_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::cvtss2si_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::cvttpd2dq_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::cvttpd2pi_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::cvttps2dq_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::cvttps2pi_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::cvttsd2si_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::cvttss2si_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::divpd_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::divps_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::divsd_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::divss_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::dppd_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::dpps_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::extractps_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::haddpd_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::haddps_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::hsubpd_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::hsubps_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::insertps_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::lddqu_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::maskmovdqu_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::maskmovq_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::maxpd_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::maxps_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::maxsd_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::maxss_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::minpd_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::minps_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::minsd_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::minss_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::movapd_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::movaps_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::movd_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	if((p_insn_exec_info->flag& EXEC_F_DIR))
+	{
+		update_reg(p_insn_exec_info->reg,
+			reg_file.mmx_reg[p_insn_exec_info->r_m.operand_desc.reg.reg_no].l[0]);
+	}
+	else
+	{
+		reg_file.mmx_reg[p_insn_exec_info->r_m.operand_desc.reg.reg_no].l[0]
+		= reg_file.read_reg(p_insn_exec_info->reg);
+
+	}
+}
+void CCPU::movddup_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::movdq2q_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::movdqa_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::movdqu_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::movhlps_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::movhpd_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::movhps_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::movlhpd_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::movlhps_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::movlpd_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::movlps_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::movmskpd_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::movmskps_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::movndq_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::movntdqa_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::movnti_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::movntpd_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::movntps_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::movntq_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::movq_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::movq2dq_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::movsd_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::movshdup_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::movsldup_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::movss_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::movupd_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::movups_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::mpsadbw_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::mulpd_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::mulps_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::mulsd_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::mulss_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::orpd_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::orps_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::packssdw_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::packsswb_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::packuswb_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::paddb_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::paddd_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::paddq_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::paddsb_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::paddsw_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::paddusb_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::paddusw_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::paddw_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::pand_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::pandn_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::pavgb_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::pavgw_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::pcmpeqb_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::pcmpeqd_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::pcmpeqw_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::pcmpgtb_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::pcmpgtd_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::pcmpgtw_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::pextrw_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::pinsrw_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::pmaddwd_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::pmaxsw_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::pmaxub_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::pminsw_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::PMINUB_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::pmovmskb_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::pmulhuw_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::pmullhw_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::pmulludq_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::pmullw_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::por_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::ppushd_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::PREFETCHT0_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::PREFETCHT1_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::PREFETCHT2_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::PREFETCHTA_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::psadbw_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::pshufhw_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::pshuflw_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::pshufw_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::pslld_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::pslldq_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::psllq_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::psllw_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::psrad_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::psraw_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::psrldq_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::psubb_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::psubd_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::psubq_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::psubsb_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::psubsw_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::psubusb_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::psubusw_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::psubw_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::punpckhbw_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::punpckhdq_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::punpckhqdq_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::punpckhwd_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::punpcklbw_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::punpckldq_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::punpcklqdq_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::punpcklwd_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::pxor_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::rcpps_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::rcpss_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::rsqrtps_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::rsqrtss_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::shufpd_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::shufps_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::sqrtps_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::sqrtsd_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::sqrtss_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::subpd_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::subps_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::subsd_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::subss_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::ucomisd_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::ucomiss_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::unpckhpd_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::unpckhps_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::unpcklpd_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::unpcklps_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::xorpd_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}
+void CCPU::xorps_(PINSN_EXEC_INFO p_insn_exec_info)
+{
+	assert(0);
+}

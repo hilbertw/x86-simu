@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{4F86980F-1E4D-461F-837B-94791760A237}</ProjectGuid>
+    <RootNamespace>cpusimu</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v120_xp</PlatformToolset>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v120_xp</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>12.0.30501.0</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)$(Configuration)\\$(ProjectName)</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)$(Configuration)\\$(ProjectName)</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>include;..\apic;..\sys\include;..\common\include;..\runtime-lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <AdditionalOptions>/FS %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Lib>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Lib>
+    <Lib>
+      <SubSystem>Console</SubSystem>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <AdditionalIncludeDirectories>include;..\apic;..\sys\include;..\common\include;..\..\runtime-lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <AdditionalOptions>/FS %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Lib>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Lib>
+    <Lib>
+      <SubSystem>Console</SubSystem>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="alu-exec.cpp" />
+    <ClCompile Include="alucore.cpp" />
+    <ClCompile Include="bitop-exec.cpp" />
+    <ClCompile Include="biu.cpp" />
+    <ClCompile Include="branch-exec.cpp" />
+    <ClCompile Include="call.cpp" />
+    <ClCompile Include="cbw.cpp" />
+    <ClCompile Include="check.cpp" />
+    <ClCompile Include="cmpxchg.cpp" />
+    <ClCompile Include="cpu.cpp" />
+    <ClCompile Include="cpuid.cpp" />
+    <ClCompile Include="dump.cpp" />
+    <ClCompile Include="enter-leave.cpp" />
+    <ClCompile Include="exception-int.cpp" />
+    <ClCompile Include="fetch-mmu.cpp" />
+    <ClCompile Include="fpu-exec.cpp" />
+    <ClCompile Include="fpu.cpp" />
+    <ClCompile Include="gdt.cpp" />
+    <ClCompile Include="idt.cpp" />
+    <ClCompile Include="instr.cpp" />
+    <ClCompile Include="int.cpp" />
+    <ClCompile Include="iret.cpp" />
+    <ClCompile Include="jump.cpp" />
+    <ClCompile Include="lar.cpp" />
+    <ClCompile Include="lldt.cpp" />
+    <ClCompile Include="lmsw.cpp" />
+    <ClCompile Include="loop.cpp" />
+    <ClCompile Include="lsq-exec.cpp" />
+    <ClCompile Include="lsq.cpp" />
+    <ClCompile Include="ltr.cpp" />
+    <ClCompile Include="memory-if.cpp" />
+    <ClCompile Include="mmu.cpp" />
+    <ClCompile Include="mrom-exec.cpp" />
+    <ClCompile Include="msr.cpp" />
+    <ClCompile Include="mult-exec.cpp" />
+    <ClCompile Include="popfd.cpp" />
+    <ClCompile Include="portio.cpp" />
+    <ClCompile Include="regfile.cpp" />
+    <ClCompile Include="ret.cpp" />
+    <ClCompile Include="run.cpp" />
+    <ClCompile Include="smi.cpp" />
+    <ClCompile Include="specail-reg.cpp" />
+    <ClCompile Include="sse-exec.cpp" />
+    <ClCompile Include="sse.cpp" />
+    <ClCompile Include="stack.cpp" />
+    <ClCompile Include="string.cpp" />
+    <ClCompile Include="task.cpp" />
+    <ClCompile Include="tlb.cpp" />
+    <ClCompile Include="trace.cpp" />
+    <ClCompile Include="v86.cpp" />
+    <ClCompile Include="xlat.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\isa-simu-core\alu.h" />
+    <ClInclude Include="..\isa-simu-core\branch.h" />
+    <ClInclude Include="..\isa-simu-core\mrom.h" />
+    <ClInclude Include="alu.h" />
+    <ClInclude Include="cache-if.h" />
+    <ClInclude Include="cache.h" />
+    <ClInclude Include="include\alu.h" />
+    <ClInclude Include="include\alucore.h" />
+    <ClInclude Include="include\biu.h" />
+    <ClInclude Include="include\cache-if.h" />
+    <ClInclude Include="include\cache.h" />
+    <ClInclude Include="include\condition.h" />
+    <ClInclude Include="include\cpu.h" />
+    <ClInclude Include="include\exception.h" />
+    <ClInclude Include="include\fpu-inc.h" />
+    <ClInclude Include="include\fpu.h" />
+    <ClInclude Include="include\instr-dat.h" />
+    <ClInclude Include="include\lsq.h" />
+    <ClInclude Include="include\memory-if.h" />
+    <ClInclude Include="include\mmu-ifetcher.h" />
+    <ClInclude Include="include\mmu.h" />
+    <ClInclude Include="include\msr.h" />
+    <ClInclude Include="include\mult.h" />
+    <ClInclude Include="include\pg-table.h" />
+    <ClInclude Include="include\regfile.h" />
+    <ClInclude Include="include\smi.h" />
+    <ClInclude Include="include\sse-inc.h" />
+    <ClInclude Include="include\sse-old.h" />
+    <ClInclude Include="include\sse.h" />
+    <ClInclude Include="include\stdafx.h" />
+    <ClInclude Include="include\sysreg.h" />
+    <ClInclude Include="include\tlb.h" />
+    <ClInclude Include="include\types.h" />
+    <ClInclude Include="lsq.h" />
+    <ClInclude Include="mult.h" />
+    <ClInclude Include="regfile.h" />
+    <ClInclude Include="smi.h" />
+    <ClInclude Include="types.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

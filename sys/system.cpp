@@ -1,0 +1,315 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+#include "addressmap.cpp"
+#include "apic.h"
+#include "pci.h"
+#include "fsb.h"
+#include "mch.h"
+#include "ich.h"
+#include "filemap.h"
+#include "log.h"
+#include "util.h"
+#include "win-util.h"
+#include "8259.h"
+#include "8253.h"
+#include "vga.h"
+#include "ide.h"
+#include "sys.h"
+#include "cpu.h"
+#include "usb.h"
+CPCIBus pci_bus;
+CFrontSystemBus fsb;
+CMCH mch;
+CICH ich;
+
+CAPICBus apic_bus;
+
+#undef CFG_CDROM_IMAGE
+#define CFG_CDROM_IMAGE L"xpsp3.iso"
+CIoAPIC io_apic;
+CCPU cpu[CFG_N_CPUS];
+
+extern bool step,trace;
+
+const LPCWSTR sys_state_fpath=CFG_SYSSTATUS_FPATH;
+
+int __cdecl sys_init(int argc,char * argv[])
+{
+	void *p;
+
+	if(argc>1)
+	{
+		if(argv[1][0]=='0') step=false;
+		else  step=true;
+	}
+
+	if (ich.bios_map.LoadFile(CFG_BIOS_IMAGE, 0, 0, CFG_BIOS_SIZE, true)) { LastErrorMsg(); return -1; }
+	//if(ich.nvs_map.LoadFile(CFG_NVS_IMAGE,0,0,CFG_NVS_SIZE, false)) {LastErrorMsg();return -2;}
+	if(mch.ram_map.LoadFile(CFG_RAM_IMAGE,0,0,CFG_RAM_SIZE, false)){LastErrorMsg();return -3;}
+	if(mch.vgabios_map.LoadFile(CFG_VGABIOS_IMAGE,0,0,CFG_VGABIOS_SIZE, true)){LastErrorMsg();return -4;}
+	if(mch.smram_map.LoadFile(CFG_SMRAM_IMAGE,0,0,CFG_SMRAM_SIZE, false)){LastErrorMsg();return -5;}
+	if(!log_init()){LastErrorMsg();return -6;} 
+
+
+	if(!floppy_mount(CFG_FLOPPY_IMAGE,0,true)){LastErrorMsg();} 
+	if (!ide_mount(CFG_IDE_IMAGE, 0, CFG_IDE_SIZE_G, false)){ LastErrorMsg(); }
+	if(!ide_mount(CFG_CDROM_IMAGE,2,0,true)){LastErrorMsg();} 
+	if(!load_cmos()){LastErrorMsg();} 
+
+	//log0("BIOS mapped to%x\n",(char *)ich.bios_map);
+	//log0("VGABIOS mapped to%x\n",(char *)mch.vgabios_map);
+
+	ich.IO.RegisterAddressRange(general_io,0xe0,0x10,0);  // all undefined ports
+
+	ich.IO.RegisterAddressRange(port80_handler,0x80,1,0);  // debug port,and others
+	ich.IO.RegisterAddressRange(lpc_handler,0x2e,2,0);      // lpc sio
+	ich.IO.RegisterAddressRange(lpc_handler,0x4e,2,0);      // lpc sio
+	ich.IO.RegisterAddressRange(apm_handler,0xb2,2,0);      // apm
+	ich.IO.RegisterAddressRange(io_imcr,0x22,2,0);      // imcr
+
+	ich.IO.RegisterAddressRange(io_8042,0x60,8,0);        // kbd
+	ich.IO.RegisterAddressRange(io_8237,0x0,0x10,0);
+	ich.IO.RegisterAddressRange(io_8237,0xc0,0x20,0);
+	ich.IO.RegisterAddressRange(io_8237,0x81,0x0f,0);
+	ich.IO.RegisterAddressRange(io_8253,0x40,4,0);//0040-0043	Programable Interval Timer 1 (8254 chip)
+	ich.IO.RegisterAddressRange(io_8259,0x20,0x2,0);//0x20,0x21 and alias
+	ich.IO.RegisterAddressRange(io_8259,0x24,0x2,0);//0x20,0x21 and alias
+	ich.IO.RegisterAddressRange(io_8259,0x28,0x2,0);//0x20,0x21 and alias
+	ich.IO.RegisterAddressRange(io_8259,0x2c,0x2,0);//0x20,0x21 and alias
+	ich.IO.RegisterAddressRange(io_8259,0x30,0x2,0);//0x20,0x21 and alias
+	ich.IO.RegisterAddressRange(io_8259,0x34,0x2,0);//0x20,0x21 and alias
+	ich.IO.RegisterAddressRange(io_8259,0x38,0x2,0);//0x20,0x21 and alias
+	ich.IO.RegisterAddressRange(io_8259,0x3c,0x2,0);//0x20,0x21 and alias
+	ich.IO.RegisterAddressRange(io_8259,0xa0,0x2,0);//0x20,0x21 and alias
+	ich.IO.RegisterAddressRange(io_8259,0xa4,0x2,0);//0x20,0x21 and alias
+	ich.IO.RegisterAddressRange(io_8259,0xa8,0x2,0);//0x20,0x21 and alias
+	ich.IO.RegisterAddressRange(io_8259,0xac,0x2,0);//0x20,0x21 and alias
+	ich.IO.RegisterAddressRange(io_8259,0xb0,0x2,0);//0x20,0x21 and alias
+	ich.IO.RegisterAddressRange(io_8259,0xb4,0x2,0);//0x20,0x21 and alias
+	ich.IO.RegisterAddressRange(io_8259,0xb8,0x2,0);//0x20,0x21 and alias
+	ich.IO.RegisterAddressRange(io_8259,0xbc,0x2,0);//0x20,0x21 and alias
+
+	ich.IO.RegisterAddressRange(io_vga,0x3c0,0x10,0);//vga
+	//ich.IO.RegisterAddressRange(io_vga_crtc,0x3d0,0x10,0);//3d4/3d5/3da vga crtc
+	//ich.IO.RegisterAddressRange(io_vga_crtc,0x3d0,0x10,0);//3d4/3d5/3da vga crtc
+	ich.IO.RegisterAddressRange(io_cga,0x3d0,0x10,0);//3d4/3d5/3da
+	ich.IO.RegisterAddressRange(io_mda,0x3b0,0x10,0);//3b4/3b5/3ba Monochrome
+	ich.IO.RegisterAddressRange(isa_pnp_wrp,0xa79,1,0);
+	ich.IO.RegisterAddressRange(isa_pnp_pidxr,0x279,1,0);
+	ich.IO.RegisterAddressRange(isa_pnp_rdp,0x213,1,0);
+	//
+	// ide Secondary
+	//
+	p=ich.IO.RegisterAddressRange(io_ide1,0x170,0x8,1);//170~177
+	assert(p);
+	*(char *)p=1;
+	p=ich.IO.RegisterAddressRange(io_ide2,0x376,2,1);//376/377
+	assert(p);
+	*(char *)p=1;
+	//
+	// floppy
+	//
+	p=ich.IO.RegisterAddressRange(floppy_handler,0x3f0,8,1);
+	assert(p);
+	*(char *)p=0;
+
+	//p=ich.IO.RegisterAddressRange(floppy_handler,0x370,7,1);
+	//assert(p);
+	//*(char *)p=1;
+	//
+	// ide primary
+	//
+
+	p=ich.IO.RegisterAddressRange(io_ide1,0x1f0,0x8,1);//1f0~1f8
+	assert(p);
+	*(char *)p=0;
+	p=ich.IO.RegisterAddressRange(io_ide2,0x3f6,1,1);//1f0~1f8
+	assert(p);
+	*(char *)p=0;
+	//
+	// pci config
+	//
+	ich.IO.RegisterAddressRange(pci_handler,0xcf8,8,0);
+
+	ich.IO.RegisterAddressRange(cpu_if,0x92,1,0);      // reset generater@ cpu interface
+	//ich.IO.RegisterAddressRange(reset_handler,0xcf9,1,0);      // reset generater
+
+	ich.IO.RegisterAddressRange(cmos_handler,0x70,4,0);//0070-0071	NMI Enable / Real Time Clock
+
+
+	//
+	// pci bus
+	//
+	//smbus_register();
+	//mch845g_register();
+	//ich82801_register();
+	//
+	// timers
+	//
+
+
+	// cmos
+	//void update_chksum();
+	//update_chksum();
+
+	//
+	// setup cpus
+	//
+	for(int i=0;i<CFG_N_CPUS;i++)
+	{
+
+		cpu[i].setup(i+1,i==0);
+	
+		//
+		// apic bus
+		//
+		apic_bus.register_node(&cpu[i].lapic);
+	}
+	//cpu[0].halt=true;
+	return 0;
+}
+
+
+DWORD WINAPI msg_thread( LPVOID lpParam );
+
+
+int __cdecl sys_run(char * argv0)
+{
+	//
+	//  get executable handle so that window can be created.
+	//
+	HINSTANCE hInstance=GetModuleHandleA(argv0);
+	if(NULL==hInstance)
+	{
+		LastErrorMsg();return -8;
+
+	}
+
+	//
+	// start messagw loop thread
+	//
+	DWORD   dwThreadId;
+	HANDLE  hThread = CreateThread( 
+            NULL,                   // default security attributes
+            0,                      // use default stack size  
+            msg_thread,       // thread function name
+           hInstance,//argv0,          // argument to thread function 
+            0,                      // use default creation flags 
+            &dwThreadId);   // returns the thread identifier 
+
+	if(NULL==hThread)
+	{
+		LastErrorMsg();return -7;
+
+	}
+
+	void run_clock();
+	run_clock();
+
+	CloseHandle(hThread);
+	log_close();
+	floppy_unmount(0);
+	ide_unmount(0);
+	save_cmos();
+
+
+	return 0;
+}
+
+
+
+
+#define SAVE_DAT(x) if(!err)  if (fwrite((char *)&x,1,sizeof(x),wfp)!=sizeof(x)) err=true;
+#define LOAD_DAT(x) if(!err)   if (fread((char *)&x,1,sizeof(x),rfp)!=sizeof(x)) err=true;
+
+#define SAVE_DAT1(x,n) if(!err)  if (fwrite((char *)&x,1,n,wfp)!=n) err=true;
+#define LOAD_DAT1(x,n) if(!err)   if (fread((char *)&x,1,n,rfp)!=n) err=true;
+
+extern REGS_8259 reg_8259[2];
+extern STATE_8253 timer[3];
+
+extern UHCI uhci[4];
+extern EHCI ehci;
+extern CONTROLLER_STATE controller[2];
+extern unsigned char imcr;
+
+
+bool pci_save_states(FILE *wfp);
+bool pci_load_states(FILE *rfp);
+bool sys_save_snapshot()
+{
+	bool err;
+	FILE *wfp;
+
+	wfp=_wfopen(sys_state_fpath,L"w+b");
+	err=(NULL==wfp);
+
+	if(!err)
+	{
+		if(CFG_RAM_SIZE>fwrite((char *)mch.ram_map,1, CFG_RAM_SIZE,wfp)) err=true;
+
+		SAVE_DAT(timer)
+		SAVE_DAT(reg_8259)
+		SAVE_DAT(io_apic)
+		for (int i = 0; i < CFG_N_CPUS; i++)
+		{
+			SAVE_DAT1(cpu[i], CPU_STAE_SIZE)
+		}
+		//SAVE_DAT1(cpu[0],CPU_STAE_SIZE)	
+		//SAVE_DAT1(cpu[1],CPU_STAE_SIZE)	
+		SAVE_DAT1(mch,MCH_STAE_SIZE)	
+		SAVE_DAT(vga_state)
+		SAVE_DAT1(controller[0].disk[0],DISK_STATE_BYTES);
+		SAVE_DAT1(controller[0].disk[1],DISK_STATE_BYTES);
+		SAVE_DAT1(controller[1].disk[0],DISK_STATE_BYTES);
+		SAVE_DAT1(controller[1].disk[1],DISK_STATE_BYTES);
+		SAVE_DAT(uhci);
+		SAVE_DAT(ehci);
+		SAVE_DAT(imcr);
+		if(!err) err=pci_save_states(wfp);
+		if(err)  LastErrorMsg();
+
+
+		fclose(wfp);
+	}
+	return err;
+}
+
+bool sys_load_snapshot()
+{
+	bool err;
+	FILE *rfp;
+
+	rfp=_wfopen(sys_state_fpath,L"rb");
+	err=(NULL==rfp);
+
+	
+	if(!err) 
+	{
+		
+		if(CFG_RAM_SIZE>fread((char *)mch.ram_map,1, CFG_RAM_SIZE,rfp))	err=true;
+
+		LOAD_DAT(timer)
+			LOAD_DAT(reg_8259)
+			LOAD_DAT(io_apic)
+			for (int i = 0; i <CFG_N_CPUS ;i++)
+			{
+				LOAD_DAT1(cpu[i], CPU_STAE_SIZE);
+			}
+		//LOAD_DAT1(cpu[0],CPU_STAE_SIZE)	
+		//LOAD_DAT1(cpu[1],CPU_STAE_SIZE)	
+		LOAD_DAT1(mch,MCH_STAE_SIZE)
+		LOAD_DAT(vga_state)
+		LOAD_DAT1(controller[0].disk[0],DISK_STATE_BYTES);
+		LOAD_DAT1(controller[0].disk[1],DISK_STATE_BYTES);
+		LOAD_DAT1(controller[1].disk[0],DISK_STATE_BYTES);
+		LOAD_DAT1(controller[1].disk[1],DISK_STATE_BYTES);
+		LOAD_DAT(uhci);
+		LOAD_DAT(ehci);
+		LOAD_DAT(imcr);
+		if(!err) err=pci_load_states(rfp);
+		if(err)  LastErrorMsg();
+		fclose(rfp);
+	}
+	return err;
+}
